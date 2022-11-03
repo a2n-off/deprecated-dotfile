@@ -4,6 +4,8 @@
 # self
 !.gitignore
 
+!.README
+
 # home files and folder
 !.gitmux
 !.gitmux/**/*
