@@ -3,8 +3,7 @@
 
 # self
 !.gitignore
-
-!.README
+!README
 
 # home files and folder
 !.gitmux
