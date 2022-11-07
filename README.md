@@ -68,7 +68,7 @@ paru -S phpactor nvim-packer-git
 </fontconfig>
 ```
 - do `fc-cache`
-- install nerd-font [hack nerd font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip] and (jetbrain mono)[https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip)
+- install nerd-font [hack nerd font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip) and [jetbrain mono](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip)
 
 ### git & gpg & ssh
 - copy/paste ssh key into `.ssh`
