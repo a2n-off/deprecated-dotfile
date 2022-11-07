@@ -1,0 +1,35 @@
+# ignore all
+/*
+
+# self
+!.gitignore
+!README
+
+# home files and folder
+!.gitmux
+!.gitmux/**/*
+
+!.tmux
+!.tmux/**/*
+
+!.tmux.conf
+!.fonts.conf
+!.zshrc
+
+# .config subfolders
+!.config
+!.config/**
+.config/**
+
+!.config/fontconfig/
+!.config/fontconfig/**/*
+
+!.config/kitty/
+!.config/kitty/**/*
+
+!.config/latte/
+!.config/latte/**/*
+
+!.config/nvim/
+!.config/nvim/**/*
+
