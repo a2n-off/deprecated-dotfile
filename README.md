@@ -1,6 +1,6 @@
 personnal dotfile
 
-## content
+# content
 
 config file for :
 - zsh and my zsh
@@ -9,7 +9,7 @@ config file for :
 - gitmux
 - font
 
-## Do after clone
+# Do after clone
 
 ## install
 - kitty
@@ -17,19 +17,19 @@ config file for :
 - install nvim
 
 ### nvim
-- (install lsp server)[https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md] and other stuff
+- [install lsp server](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) and other stuff
 ```
 sudo pacman -S base-devel cmake unzip ninja tree-sitter curl python-neovim
 npm install -g @angular/language-server eslint_d @fsouza/prettierd typescript typescript-language-server sql-language-server bash-language-server vscode-langservers-extracted cssmodules-language-server dockerfile-language-server-nodejs
 yarn global add yaml-language-server
 paru -S phpactor nvim-packer-git
 ```
-- for terraform lsp dl the (bin here)[https://github.com/juliosueiras/terraform-lsp/releases] and add to `~/.tflsp`, the path is already set in the `.zshrc`
+- for terraform lsp dl the [bin here](https://github.com/juliosueiras/terraform-lsp/releases) and add to `~/.tflsp`, the path is already set in the `.zshrc`
 - do `PackerInstall`
 - do `Mason` and install server
 
 ## font and emoji
-- install (powerline font)[https://github.com/powerline/fonts] (for neovim)
+- install [powerline font](https://github.com/powerline/fonts) (for neovim)
 - install noto-fonts-emoji `pacman -S noto-fonts-emoji`
 - create `/etc/fonts/local.conf` and paste
 ```
@@ -68,7 +68,7 @@ paru -S phpactor nvim-packer-git
 </fontconfig>
 ```
 - do `fc-cache`
-- install nerd-font (hack nerd font)[https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip] and (jetbrain mono)[https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip]
+- install nerd-font [hack nerd font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip] and (jetbrain mono)[https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip)
 
 ### git & gpg & ssh
 - copy/paste ssh key into `.ssh`
