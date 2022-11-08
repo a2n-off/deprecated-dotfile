@@ -19,10 +19,10 @@ config file for :
 ### nvim
 - [install lsp server](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) and other stuff
 ```
-sudo pacman -S base-devel cmake unzip ninja tree-sitter curl python-neovim
+sudo pacman -S base-devel cmake unzip ninja tree-sitter curl python-neovim ripgrep
 npm install -g @angular/language-server eslint_d @fsouza/prettierd typescript typescript-language-server sql-language-server bash-language-server vscode-langservers-extracted cssmodules-language-server dockerfile-language-server-nodejs
 yarn global add yaml-language-server
-paru -S phpactor nvim-packer-git
+paru -S phpactor nvim-packer-git sourcekit-lsp
 ```
 - for terraform lsp dl the [bin here](https://github.com/juliosueiras/terraform-lsp/releases) and add to `~/.tflsp`, the path is already set in the `.zshrc`
 - do `PackerInstall`
