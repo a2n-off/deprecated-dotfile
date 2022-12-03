@@ -1,0 +1,122 @@
+set -g mouse on
+
+# --> Catppuccin (Frappe)
+thm_bg="#303446"
+thm_fg="#c6d0f5"
+thm_cyan="#99d1db"
+thm_black="#292c3c"
+thm_gray="#414559"
+thm_magenta="#ca9ee6"
+thm_pink="#f4b8e4"
+thm_red="#e78284"
+thm_green="#a6d189"
+thm_yellow="#e5c890"
+thm_blue="#8caaee"
+thm_orange="#ef9f76"
+thm_black4="#626880"
+thm_tr="transparent"
+
+# --> icons
+i_circle_right=''
+i_triangle_right=''
+i_arrow_right=''
+i_circle_left=''
+i_triangle_left=''
+i_arrow_left=''
+i_dot_full=''
+i_dot_empty=''
+i_folder=''
+i_terminal=''
+i_git=''
+
+set_triangle='1'
+oi_right='#{?$set_triangle==1,$i_triangle_right,$i_circle_right}'
+i_right=$i_circle_right
+oi_left='#{?$set_triangle==1,$i_triangle_left,$i_circle_left}'
+i_left=$i_circle_left
+
+# ----------------------------=== Theme ===--------------------------
+
+#set-option -wg automatic-rename off
+
+# status
+set -g status-position bottom
+set -g status "on"
+set -g status-bg "${thm_bg}"
+set -g status-justify "left"
+set -g status-left-length "100"
+set -g status-right-length "100"
+
+# messages
+set -g message-style fg="${thm_cyan}",bg="${thm_gray}",align="centre"
+set -g message-command-style fg="${thm_cyan}",bg="${thm_gray}",align="centre"
+
+# panes
+set -g pane-border-style fg="${thm_gray}"
+set -g pane-active-border-style fg="${thm_blue}"
+
+# windows
+setw -g window-status-activity-style fg="${thm_fg}",bg="${thm_bg}",none
+setw -g window-status-separator ""
+setw -g window-status-style fg="${thm_fg}",bg="${thm_bg}",none
+
+# --------=== Statusline
+
+# update interval
+set -g status-interval 1
+
+is_first_window="#{==:#{window_index},0}"
+is_not_first_window="#{!=:#{window_index},0}"
+is_last_window="#{window_end_flag}"
+is_active_window="#{==:#{active_window_index},#{window_index}}"
+is_just_before_active_window="#{==:#{e|-:#{active_window_index},1},#{window_index}}"
+current_dir="#{pane_current_path}"
+
+active_end_arrow="#[fg=$thm_fg,bg=$thm_blue]${i_right}"
+active_end_arrow_last="#[fg=$thm_fg,bg=$thm_bg]${i_right}"
+# TODO dosent work...
+styled_end_arrow='#{ ?$is_last_window, $active_end_arrow, $active_end_arrow_last }'
+
+unactive_end_arrow="#[fg=$thm_gray,bg=$thm_bg]$i_right"
+#inactive_start_arrow="#[fg=$thm_bg,bg=$thm_blue]$i_right"
+#active_start_arrow="#[fg=$thm_bg,bg=$thm_orange]$i_right"
+
+# #W --> give the name of the windows
+# #I --> give 0, 1, 2 ...
+# #{b:pane_current_path} --> give current folder
+active_i="#[fg=$thm_bg,bg=$thm_orange] #I "
+inactive_i="#[fg=$thm_bg,bg=$thm_blue] #I "
+active_w="#[fg=$thm_bg,bg=$thm_fg] #W "
+inactive_w="#[fg=$thm_fg,bg=$thm_gray] #W "
+
+#styled_i="#{?${is_active_window},${active_i},${inactive_i}}"
+
+gitmux='#(gitmux -cfg ~/.gitmux/.gitmux.conf "#{pane_current_path}")'
+git="#(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD)"
+
+set -g status-left "#{?pane_in_mode,,}"
+set -g status-right "#{?pane_in_mode,#[fg=$thm_red],#[fg=$thm_gray]}#[bg=$thm_bg]$i_left#{?pane_in_mode,#[bg=$thm_red],#[bg=$thm_gray]}#[fg=$thm_bg] #{?pane_in_mode,,} #{?pane_in_mode,#[bg=$thm_red],#[bg=$thm_gray]}#[fg=$thm_blue,nobold,nounderscore,noitalics]$i_left#[fg=$thm_bg,bg=$thm_blue,nobold,nounderscore,noitalics]  #{b:pane_current_path} #{?client_prefix,#[fg=$thm_red],#[fg=$thm_green]}#[bg=$thm_blue]$i_left#{?client_prefix,#[bg=$thm_red],#[bg=$thm_green]}#[fg=$thm_bg]  #S "
+
+# current_dir
+setw -g window-status-format "#{?${is_first_window},,${inactive_start_arrow}}${inactive_i}${inactive_w}${unactive_end_arrow}"
+setw -g window-status-current-format "#{?${is_first_window},,${active_start_arrow}}${active_i}${active_w}${styled_end_arrow}"
+
+# parent_dir/current_dir
+# setw -g window-status-format "#[fg=colour232,bg=colour111] #I #[fg=colour222,bg=colour235] #(echo '#{pane_current_path}' | rev | cut -d'/' -f-2 | rev) "
+# setw -g window-status-current-format "#[fg=colour232,bg=colour208] #I #[fg=colour255,bg=colour237] #(echo '#{pane_current_path}' | rev | cut -d'/' -f-2 | rev) "
+
+# --------=== Modes
+setw -g clock-mode-colour "${thm_blue}"
+setw -g mode-style "fg=${thm_pink} bg=${thm_black4} bold"
+
+# --------=== plugins
+set -g @tmux_window_name_use_tilde "True"
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'ofirgall/tmux-window-name'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
