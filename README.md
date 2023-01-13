@@ -17,12 +17,15 @@ config file for :
 - install nvim
 
 ### nvim
+
+**Before anything else :**
+
 - [install lsp server](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) and other stuff
 ```
 sudo pacman -S base-devel cmake unzip ninja tree-sitter curl python-neovim ripgrep
+paru -S phpactor nvim-packer-git sourcekit-lsp
 npm install -g @angular/language-server eslint_d @fsouza/prettierd typescript typescript-language-server sql-language-server bash-language-server vscode-langservers-extracted cssmodules-language-server dockerfile-language-server-nodejs
 yarn global add yaml-language-server
-paru -S phpactor nvim-packer-git sourcekit-lsp
 ```
 - for terraform lsp dl the [bin here](https://github.com/juliosueiras/terraform-lsp/releases) and add to `~/.tflsp`, the path is already set in the `.zshrc`
 - do `PackerInstall`
@@ -31,6 +34,7 @@ paru -S phpactor nvim-packer-git sourcekit-lsp
 ## font and emoji
 - install [powerline font](https://github.com/powerline/fonts) (for neovim)
 - install noto-fonts-emoji `pacman -S noto-fonts-emoji`
+- install nerd-font [hack nerd font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip) and [jetbrain mono](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip)
 - create `/etc/fonts/local.conf` and paste
 ```
 <?xml version="1.0"?>
@@ -68,7 +72,6 @@ paru -S phpactor nvim-packer-git sourcekit-lsp
 </fontconfig>
 ```
 - do `fc-cache`
-- install nerd-font [hack nerd font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip) and [jetbrain mono](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip)
 
 ### git & gpg & ssh
 - copy/paste ssh key into `.ssh`
