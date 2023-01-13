@@ -1,10 +1,13 @@
-vim.g.catppuccin_flavour = 'latte' -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = 'frappe' -- latte, frappe, macchiato, mocha
 
+-- this is a comment
 require('catppuccin').setup({
   transparent_background = true,
-  styles = {
-    comments = { fg = "#000000" }
-  }
+  custom_highlights = function(colors)
+    return {
+      Comment = { fg = colors.teal },
+    }
+  end
 })
 
 vim.cmd [[colorscheme catppuccin]]
