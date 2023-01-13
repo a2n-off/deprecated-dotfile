@@ -38,5 +38,7 @@ packer.startup(
     use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
     use 'lewis6991/gitsigns.nvim'
     use 'dinhhuy258/git.nvim' -- For git blame & browse
+    use 'goolord/alpha-nvim' -- dashboard greeter
+    use 'j-hui/fidget.nvim' -- workspace lsp status
   end
 )
