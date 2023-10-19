@@ -1,6 +1,9 @@
-personal config file for nvim (including the last version fo lsp-zero)
+personal config file for : 
 
-### plugin
+ - nvim (including the last version for lsp-zero)
+ - zsh (need to update check other branch atm)
+
+### plugins
 
  - packer
  - catppuccin
@@ -31,4 +34,8 @@ Add a config file named `undotree` in `after/plugin` :
 ```lua
 vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle)
 ```
+
+### the other brach in this repo
+
+The default branch is the updated one. The other is just here for reference.
 
