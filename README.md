@@ -1,5 +1,7 @@
 personnal dotfile
 
+# CHECK the list of the branch for the most recent version
+
 # content
 
 config file for :
