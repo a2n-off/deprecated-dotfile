@@ -1,1 +1,1 @@
-require("a2n")
+require('a2n')

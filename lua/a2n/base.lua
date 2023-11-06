@@ -3,10 +3,13 @@ vim.opt.termguicolors = true -- enabled 24bit RGB color
 vim.opt.signcolumn = 'yes' -- always draw the sign column
 vim.opt.updatetime = 50 -- update time for the swap file and for the cursorHold event
 -- vim.opt.colorcolumn = '80' -- colorized the 80th column
-vim.opt.clipboard:append { 'unnamedplus' } -- 
+vim.opt.clipboard:append { 'unnamedplus' } -- setup the clipbord for x
 
 -- BACKUP
-vim.opt.backup = false -- no backup of the current file is made
+vim.opt.swapfile = false -- disable the default backup behavior
+vim.opt.backup = false -- disable the default backup behavior
+vim.opt.undofile = true -- activate the undofile behavior
+vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir' -- use the directory of undotree plugin for managing the history
 
 -- FILE LINES
 vim.wo.number = true -- show line number
